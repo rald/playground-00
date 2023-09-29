@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <title>POCS - The Playground: Cash Flow</title>
+
+      <link rel="icon" type="image/png" href="favicon.png" />
+
+	<style>
+
+table {
+	white-space: nowrap;
+}
+
+tr:nth-child(even) {
+	background-color: #ddd;
+}
+
+tr:nth-child(odd) {
+	background-color: #eee;
+}
+		
+tr:nth-child(1) {
+	background-color: navy;
+	color: white;
+}
+
+	</style>
+</head>
+<body>
+<div id="display"></div>
+
+
+
+<script>
+	
+var cashFlow = [
+{ name: "Joseph", date: "2023-09-24",info: "Donation: Optiplex 780", date: "2023-09-24", cashIn: 0.00, cashOut: 0.00 },
+{ name: "Edu", date: "2023-09-27", info: "Ads", cashIn: 0.00, cashOut: 0.0 },
+{ name: "Emeruth", date: "2023-09-28", info: "Logo/TShirt Design", cashIn: 0.00, cashOut: 0.0 },
+{ name: "Joval", date: "2023-09-28", info: "Logo/TShirt Design", cashIn: 0.00, cashOut: 0.0 },
+{ name: "Grace", date: "2023-09-28", info: "Donation: Money", cashIn: 5074.00, cashOut: 0.00 },
+{ name: "Itami", date: "2023-09-29", info: "Borrowed: Money", cashIn: 0.00, cashOut: 110.00 }
+];
+
+var display=document.getElementById("display");
+
+function displayDonationTable() {
+
+	var cashInTotal=0;
+	var cashOutTotal=0;
+	var balanceTotal=0;
+	
+	var html="";
+	
+	html+="<table align='center' border='1' cellspacing='0' cellpadding='5'>";
+	html+="<caption><h3>Cash Flow</h3></caption>";
+	html+="<tr>";
+		html+="<th>Name</th>";
+		html+="<th>Date</th>";
+		html+="<th>Info</th>";
+		html+="<th>Cash&nbsp;In</th>";
+		html+="<th>Cash&nbsp;Out</th>";
+		html+="<th>Balance</th>";
+	html+="</tr>";
+
+
+
+	for(c of cashFlow) {
+		html+="<tr>";
+		html+=`<td>${c.name}</td>`;
+		html+=`<td>${c.date}</td>`;
+		html+=`<td>${c.info}</td>`;
+		html+=`<td align='right'>${c.cashIn===0?"--":c.cashIn.toFixed(2)}</td>`;
+		html+=`<td align='right'>${c.cashOut===0?"--":c.cashOut.toFixed(2)}</td>`;
+		
+		var balance=c.cashIn-c.cashOut;
+		
+		html+=`<td align='right'>${balance===0?"--":balance.toFixed(2)}</td>`;
+		html+="</tr>";
+		
+		cashInTotal+=c.cashIn;
+	 	cashOutTotal+=c.cashOut;
+	 	balanceTotal+=c.cashIn-c.cashOut;
+
+	}
+
+
+
+	html+="<tr>";
+	html+="<th colspan='3' align='right'>Total</th>"
+	html+=`<td align='right'>${cashInTotal.toFixed(2)}</td>`;
+	html+=`<td align='right'>${cashOutTotal.toFixed(2)}</td>`;
+	html+=`<td align='right'>${balanceTotal.toFixed(2)}</td>`;
+	html+="</tr>";
+
+	html+="</table>";
+	
+	display.innerHTML=html;
+	
+}	
+	
+	
+displayDonationTable();	
+	
+</script>
+
+</body>
+</html>

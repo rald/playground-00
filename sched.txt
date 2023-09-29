@@ -1,0 +1,27 @@
+mon - sun 12pm-1pm, 7pm-8pm break time
+thu				7pm-8pm						bible study
+fri 			7pm-9pm 					bible study
+sun				1:30pm-3pm				bible study
+
+
+itami I2206 Inactive
+  mon 8pm-11pm WebTech
+  tue 8pm-11pm Java
+  wed 8pm-11pm C++
+
+ferd I2209 Active
+	wed 			8pm-11pm		WebTech
+	thu, fri	7am-11:30am Linux
+  thu 			8pm-11pm		Java
+  sat 			8pm-11pm		Python
+  sun 			8pm-11pm		C
+  
+phol J2300 Active
+	Sat, Sun	9am-12pm	WebTech
+
+lloyd H2300 Inactive
+sat 4pm-7pm C#
+sun 4pm-7pm WebTech
+
+andrew I2300 Active
+sat 4pm-7pm WebTech
